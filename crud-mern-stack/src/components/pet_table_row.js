@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 
 
-const PetTableRow = () => {
+const PetTableRow = (props) => {
 
     const {_id, name, species, breed, age, location} = props.obj;
 
