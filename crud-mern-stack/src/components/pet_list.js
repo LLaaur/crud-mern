@@ -9,7 +9,7 @@ const PetList = () => {
 
     useEffect(() => {
         axios.get(
-            "http://localhost:4000/pets"
+            "http://localhost:4000/pets/"
         )
             .then(({data}) => {
                 setPets(data);

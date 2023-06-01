@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PetForm from "./petform";
 
@@ -10,9 +10,9 @@ const AddPet = () => {
         axios.post(
             "http://localhost:4000/pets/add_pet", petObject
         )
-            .then((res) => {
+            .then(res => {
                 if (res.status === 200){
-                    alert("pet added sucesfully")
+                    alert("pet added suscesfully")
                 }
                 else{
                     Promise.reject()
