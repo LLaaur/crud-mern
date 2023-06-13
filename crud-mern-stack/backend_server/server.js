@@ -25,12 +25,10 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 app.use("/pets", petRoute)
 
-const port = process.env.PORT || 3001;
-
-const server = app.listen(port, () => {
-    console.log("Connected to port " + port)
+const server = app.listen(3001, "localhost");
+server.on("listening", function(){
+    console.log('Express server started on port %s at %s', server.address().port, server.address());
 })
-
 app.use((req, res, next) => {
     res.status(404).send("Error 404!")
 });

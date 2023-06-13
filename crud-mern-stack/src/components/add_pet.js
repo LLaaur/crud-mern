@@ -12,7 +12,9 @@ const AddPet = () => {
         )
             .then(res => {
                 if (res.status === 200){
-                    alert("pet added suscesfully")
+                    alert("pet added suscesfully");
+                    const {name, species, breed, age, location} = res.data;
+                    setFormValues({name, species, breed, age, location});
                 }
                 else{
                     Promise.reject()
